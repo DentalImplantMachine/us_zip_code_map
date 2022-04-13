@@ -10,7 +10,7 @@ let zipCodeCentroids = {
   features: [],
 };
 
-let map = L.map("map", { fullScreenControl: true, zoomSnap: 0.2 });
+let map = L.map("map", { fullScreenControl: true, zoomSnap: 0.2 }).setView([55.73801, 37.62599], 1);
 L.streetView().addTo(map);
 
 let startLatitude = 39.26;
