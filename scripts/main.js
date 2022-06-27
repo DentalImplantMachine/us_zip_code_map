@@ -32,6 +32,7 @@ L.control
 const fsControl = L.control.fullscreen();
 map.addControl(fsControl);
 
+
 map.on("enterFullscreen", function () {});
 map.on("exitFullscreen", function () {});
 
@@ -42,6 +43,8 @@ L.easyButton(
   },
   "Default View"
 ).addTo(map);
+
+
 
 function thousandsSeparator(x) {
   x = x.toString();
@@ -70,8 +73,8 @@ let circleMarkerFound = {
 
 let styleStateLines = {
   color: "#000000",
-  opacity: 1,
-  weight: 2,
+  opacity: .5,
+  weight: 1,
 };
 
 function colorByStatus(a) {
@@ -128,12 +131,16 @@ let layerZipCodeCentroids;
 let layerStates = L.geoJson(stateLines, { style: styleStateLines }).addTo(map);
 let tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
-		id: 'mapbox/light-v10',
+		id: 'mapbox/streets-v11',
 		tileSize: 512,
 		zoomOffset: -1
 	}).addTo(map);
+
 let clinicNames = [];
 let uniqueClinicNames = [];
+
+//L.streetView().addTo(map);
+
 //-----------------------------------
 
 // POPUP CONTENT CONTROL
@@ -362,6 +369,8 @@ function otherMapFeaures() {
   //-----------------------------------
 }
 
+
+
 // VECTOR GRID TILE LAYER
 function addVectorTile() {
   let zipCodesPolygonsObjects = [];
@@ -444,10 +453,10 @@ function addVectorTile() {
             let status = properties.status;
             return {
               fillColor: colorByStatus(status),
-              fillOpacity: 0.5,
+              fillOpacity: 0.4,
               color: "#444444",
-              opacity: 1,
-              weight: 0.5,
+              opacity: .3,
+              weight: 1.4,
               stroke: true,
               fill: true,
             };
