@@ -78,9 +78,7 @@ let styleStateLines = {
 };
 
 function colorByStatus(a) {
-  return a === "Exclusive"
-    ? "#c3ecb2"
-    : a === "FRoR"
+  return a === "FRoR"
     ? "#aadaff"
     : a === "Purchased"
     ? "#eb9dad"
@@ -234,11 +232,6 @@ let legendZipCodes = L.control({ position: "bottomleft" });
 legendZipCodes.onAdd = function (map) {
   let div = L.DomUtil.create("div", "info legend legend-regions");
   div.innerHTML =
-    '<i style="background:' +
-    "#c3ecb2" +
-    '"></i> ' +
-    "Exclusive" +
-    "<br>" +
     '<i style="background:' +
     "#aadaff" +
     '"></i> ' +
