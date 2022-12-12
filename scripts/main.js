@@ -82,8 +82,6 @@ function colorByStatus(a) {
     ? "#aadaff"
     : a === "Purchased"
     ? "#eb9dad"
-    : a === "Simple"
-    ? "#c69edb"
     : a === "Client"
     ? "#ebac26"
     : "#f5f5f5";
@@ -241,11 +239,6 @@ legendZipCodes.onAdd = function (map) {
     "#eb9dad" +
     '"></i> ' +
     "Purchased" +
-    "<br>" +
-    '<i style="background:' +
-    "#c69edb" +
-    '"></i> ' +
-    "Simple" +
     "<br>" +
     '<i style="background:' +
     "#ebac26" +
